@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sri Hari Fitness – Sangareddy's premier gym. Expert trainers, premium equipment, and a community that pushes you beyond limits. Join now." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.svg" />
+  <title>Sri Hari Fitness | Sangareddy's Premier Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #0d0d0d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      transition: opacity .5s ease, visibility .5s ease;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; }
+
+    .loader__logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      animation: loaderPulse 1.5s ease-in-out infinite;
+    }
+    .loader__logo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      letter-spacing: .04em;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .loader__logo-text span { color: #F5A623; }
+
+    /* Barbell animation */
+    .loader__barbell {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .loader__plate {
+      width: 14px;
+      height: 40px;
+      background: #F5A623;
+      border-radius: 3px;
+      animation: loaderPlate 1.2s ease-in-out infinite;
+    }
+    .loader__plate--right { animation-delay: .6s; }
+    .loader__bar {
+      width: 120px;
+      height: 6px;
+      background: #333;
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+    .loader__bar::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, #F5A623, transparent);
+      animation: loaderSweep 1.2s ease-in-out infinite;
+    }
+    .loader__collar {
+      width: 8px;
+      height: 20px;
+      background: #555;
+      border-radius: 2px;
+    }
+
+    @keyframes loaderPulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: .6; }
+    }
+    @keyframes loaderPlate {
+      0%, 100% { transform: scaleY(1); }
+      50%       { transform: scaleY(.85); }
+    }
+    @keyframes loaderSweep {
+      0%   { left: -100%; }
+      100% { left: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader__logo">
+      <svg width="40" height="40" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="6" fill="#F5A623"/>
+        <path d="M6 18H9M27 18H30M9 18V13H12V23H9V18ZM27 18V13H24V23H27V18ZM12 18H24M15 13V23M21 13V23" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="loader__logo-text">SRI HARI <span>FITNESS</span></span>
+    </div>
+    <div class="loader__barbell">
+      <div class="loader__plate loader__plate--left"></div>
+      <div class="loader__collar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__collar"></div>
+      <div class="loader__plate loader__plate--right"></div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="6" fill="#F5A623"/>
+            <text x="18" y="24" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="14" fill="#0D0D0D" text-anchor="middle" letter-spacing="0.5">SHF</text>
+          </svg>
+        </span>
+        <span class="logo__text logo__text--stack"><span class="logo__text-top">SRI HARI</span><span class="logo__text-bottom accent">FITNESS</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#programs" class="nav__link">Programs</a>
+        <a href="#pricing" class="nav__link">Pricing</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+
+      <div class="header__cta">
+        <a href="https://wa.me/918639062100?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy" target="_blank" rel="noopener" class="btn btn--whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#contact" class="btn btn--primary">Join Now</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <a href="#about" class="mobile-nav__link">About</a>
+      <a href="#programs" class="mobile-nav__link">Programs</a>
+      <a href="#pricing" class="mobile-nav__link">Pricing</a>
+      <a href="#contact" class="mobile-nav__link">Contact</a>
+      <a href="https://wa.me/918639062100?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy" target="_blank" rel="noopener" class="btn btn--whatsapp btn--full">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a href="#contact" class="btn btn--primary btn--full">Join Now</a>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="hero__bg">
+      <img
+        src="new_bg_v2.png"
+        alt="Training floor at Sri Hari Fitness Sangareddy"
+        class="hero__img"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+
+
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about" aria-label="About">
+    <div class="container about__grid">
+      <div class="about__copy">
+        <p class="section-eyebrow">OUR MISSION</p>
+        <h2 class="section-headline">BUILT FOR THE <span class="accent">CHAMPIONS</span> OF SANGAREDDY</h2>
+        <p class="about__text">
+          Sri Hari Fitness was founded with one purpose — to bring world-class fitness to Sangareddy.
+          We believe every person deserves access to premium training, expert coaching, and a
+          community that lifts each other up.
+        </p>
+        <p class="about__text">
+          Located in the heart of Sangareddy, we're open 7 days a week with flexible timings that
+          work around your schedule. Whether you're just starting out or a seasoned athlete,
+          this is your home.
+        </p>
+        <a href="https://maps.app.goo.gl/hx11xZDq3kRYAemGA?g_st=iw" target="_blank" rel="noopener" class="about__location">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Opp. Collectorate Walking Park, VidyaNagar Colony, Sangareddy
+        </a>
+      </div>
+
+      <div class="about__features">
+        <div class="feature-card">
+          <span class="feature-card__icon" aria-hidden="true">🏆</span>
+          <h3 class="feature-card__title">Premium Equipment</h3>
+          <p class="feature-card__desc">State-of-the-art machines &amp; free weights</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card__icon" aria-hidden="true">🕐</span>
+          <h3 class="feature-card__title">Flexible Timings</h3>
+          <p class="feature-card__desc">Open all day — 5:30 AM to 10:00 PM, 7 days a week</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card__icon" aria-hidden="true">🔥</span>
+          <h3 class="feature-card__title">Results-Driven</h3>
+          <p class="feature-card__desc">Customised plans that actually work</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card__icon" aria-hidden="true">🤝</span>
+          <h3 class="feature-card__title">Community First</h3>
+          <p class="feature-card__desc">Supportive environment for all levels</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROGRAMS ===== -->
+  <section class="programs section" id="programs" aria-label="Programs">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">WHAT WE OFFER</p>
+        <h2 class="section-headline">CHOOSE YOUR <span class="accent">PROGRAM</span></h2>
+      </div>
+
+      <div class="programs__grid">
+        <!-- Strength -->
+        <article class="program-card">
+          <div class="program-card__icon-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11M6.5 17.5h11M3 12h18M6.5 6.5V17.5M17.5 6.5V17.5M3 9.5V14.5M21 9.5V14.5"/></svg>
+          </div>
+          <h3 class="program-card__title">STRENGTH TRAINING</h3>
+          <p class="program-card__desc">
+            Build raw power and sculpt your physique with our dedicated strength zone.
+            Free weights, barbells, squat racks, and more — all the iron you need.
+          </p>
+          <ul class="program-card__list">
+            <li>Barbell &amp; Free Weights</li>
+            <li>Squat &amp; Power Racks</li>
+            <li>Cable Machines</li>
+            <li>Olympic Lifting</li>
+          </ul>
+        </article>
+
+        <!-- Cardio -->
+        <article class="program-card">
+          <div class="program-card__icon-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3 class="program-card__title">CARDIO ZONE</h3>
+          <p class="program-card__desc">
+            Burn fat and boost endurance with our dedicated cardio floor.
+            Simple, effective machines — no waiting, no fuss.
+          </p>
+          <ul class="program-card__list">
+            <li>Treadmills</li>
+            <li>Cross Trainers</li>
+            <li>Cycling Bikes</li>
+          </ul>
+        </article>
+
+        <!-- Personal Training -->
+        <article class="program-card program-card--featured">
+          <span class="program-card__badge">MOST POPULAR</span>
+          <div class="program-card__icon-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3 class="program-card__title">PERSONAL TRAINING</h3>
+          <p class="program-card__desc">
+            Get 1-on-1 attention from our certified coaches. Custom workout plans,
+            nutrition guidance, and accountability to hit your goals faster.
+          </p>
+          <ul class="program-card__list">
+            <li>Custom Workout Plans</li>
+            <li>Nutrition Guidance</li>
+            <li>Progress Tracking</li>
+            <li>Goal-Based Training</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY STRIP ===== -->
+  <section class="gallery section--sm" aria-label="Gym photos">
+    <div class="gallery__track" aria-hidden="true">
+      <img src="Inner-Outer-Thigh-Abductor-Adductor.jpg" alt="Inner Outer Thigh Abductor Adductor machine at Sri Hari Fitness" loading="lazy" />
+      <img src="Lat-Pull-Down.jpg" alt="Lat Pull Down machine" loading="lazy" />
+      <img src="Low-Row.jpg" alt="Low Row machine" loading="lazy" />
+      <img src="Maximus-Chest-Press-1.jpg" alt="Maximus Chest Press machine" loading="lazy" />
+      <img src="Maximus-Mid-Row.jpg" alt="Maximus Mid Row machine" loading="lazy" />
+      <img src="Pec-Fly-Rear-Delt.jpg" alt="Pec Fly Rear Delt machine" loading="lazy" />
+      <img src="Seated-Leg-Extension-Leg-Curl.jpg" alt="Seated Leg Extension and Leg Curl machine" loading="lazy" />
+      <img src="Shoulder-Press.jpg" alt="Shoulder Press machine" loading="lazy" />
+      <!-- duplicate for infinite scroll illusion -->
+      <img src="Inner-Outer-Thigh-Abductor-Adductor.jpg" alt="" loading="lazy" />
+      <img src="Lat-Pull-Down.jpg" alt="" loading="lazy" />
+      <img src="Low-Row.jpg" alt="" loading="lazy" />
+      <img src="Maximus-Chest-Press-1.jpg" alt="" loading="lazy" />
+      <img src="Maximus-Mid-Row.jpg" alt="" loading="lazy" />
+      <img src="Pec-Fly-Rear-Delt.jpg" alt="" loading="lazy" />
+      <img src="Seated-Leg-Extension-Leg-Curl.jpg" alt="" loading="lazy" />
+      <img src="Shoulder-Press.jpg" alt="" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- ===== FOUNDER ===== -->
+  <section class="trainers section" id="founder" aria-label="Meet the founder">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">THE FOUNDER</p>
+        <h2 class="section-headline">MEET THE <span class="accent">FOUNDER</span></h2>
+      </div>
+
+      <div class="trainer-slide">
+        <div class="trainer-slide__copy">
+          <p class="trainer-slide__role">FOUNDER</p>
+          <h3 class="trainer-slide__name">Praveen</h3>
+          <p class="trainer-slide__bio">Praveen founded Sri Hari Fitness with a single mission — to bring premium fitness to Sangareddy. With a passion for health and community, he has built a gym that welcomes everyone from beginners to seasoned athletes, with top-of-the-line equipment and a team that genuinely cares about your results.</p>
+          <div class="trainer-slide__specs">
+            <div class="trainer-spec">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              <div>
+                <span class="trainer-spec__label">Location</span>
+                <span class="trainer-spec__value">Sangareddy, Telangana</span>
+              </div>
+            </div>
+            <div class="trainer-spec">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <div>
+                <span class="trainer-spec__label">Focus</span>
+                <span class="trainer-spec__value">Premium Equipment &amp; Expert Coaching</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trainer-slide__photo">
+          <img src="owner-dp.jpeg" alt="Praveen – Founder of Sri Hari Fitness Sangareddy" loading="lazy" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing section" id="pricing" aria-label="Membership pricing">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">TRANSPARENT PRICING</p>
+        <h2 class="section-headline">MEMBERSHIP <span class="accent">PLANS</span></h2>
+        <p class="pricing__intro">No hidden fees. No lock-ins. Just results.</p>
+      </div>
+
+      <!-- Tab switcher -->
+      <div class="pricing-tabs" role="tablist" aria-label="Membership categories">
+        <button class="pricing-tab pricing-tab--active" role="tab" aria-selected="true" data-tab="women">Women</button>
+        <button class="pricing-tab" role="tab" aria-selected="false" data-tab="men">Men</button>
+        <button class="pricing-tab" role="tab" aria-selected="false" data-tab="couple">Couple</button>
+      </div>
+
+      <!-- WOMEN -->
+      <div class="pricing-panel" id="tab-women">
+        <div class="pricing-grid">
+          <div class="pricing-card reveal" data-plan="Women – 1 Month" data-price="₹1,800">
+            <div class="pricing-card__duration">1 MONTH</div>
+            <div class="pricing-card__price">₹1,800</div>
+            <div class="pricing-card__meta">30 days &nbsp;·&nbsp; ₹60/day</div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Women – 1 Month', '₹1,800')">Select Plan</button>
+          </div>
+          <div class="pricing-card reveal" data-plan="Women – 3 Months" data-price="₹4,500">
+            <div class="pricing-card__duration">3 MONTHS</div>
+            <div class="pricing-card__price">₹4,500</div>
+            <div class="pricing-card__meta">90 days &nbsp;·&nbsp; ₹50/day</div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Women – 3 Months', '₹4,500')">Select Plan</button>
+          </div>
+          <div class="pricing-card pricing-card--hot reveal" data-plan="Women – 6 Months" data-price="₹7,000">
+            <span class="pricing-card__badge">💥 HOT DEAL</span>
+            <div class="pricing-card__duration">6 MONTHS</div>
+            <div class="pricing-card__price">₹7,000</div>
+            <div class="pricing-card__meta">180 days &nbsp;·&nbsp; ₹39/day</div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Women – 6 Months', '₹7,000')">Select Plan</button>
+          </div>
+          <div class="pricing-card pricing-card--best reveal" data-plan="Women – 12 Months" data-price="₹9,000">
+            <span class="pricing-card__badge">⭐ BEST VALUE</span>
+            <div class="pricing-card__duration">12 MONTHS</div>
+            <div class="pricing-card__price">₹9,000</div>
+            <div class="pricing-card__meta">365 days &nbsp;·&nbsp; <strong class="accent">🔥 ₹25/day</strong></div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Women – 12 Months', '₹9,000')">Select Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEN -->
+      <div class="pricing-panel pricing-panel--hidden" id="tab-men">
+        <div class="pricing-grid">
+          <div class="pricing-card reveal" data-plan="Men – 1 Month" data-price="₹2,000">
+            <div class="pricing-card__duration">1 MONTH</div>
+            <div class="pricing-card__price">₹2,000</div>
+            <div class="pricing-card__meta">30 days &nbsp;·&nbsp; ₹67/day</div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Men – 1 Month', '₹2,000')">Select Plan</button>
+          </div>
+          <div class="pricing-card reveal" data-plan="Men – 3 Months" data-price="₹5,000">
+            <div class="pricing-card__duration">3 MONTHS</div>
+            <div class="pricing-card__price">₹5,000</div>
+            <div class="pricing-card__meta">90 days &nbsp;·&nbsp; ₹56/day</div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Men – 3 Months', '₹5,000')">Select Plan</button>
+          </div>
+          <div class="pricing-card reveal" data-plan="Men – 6 Months" data-price="₹7,500">
+            <div class="pricing-card__duration">6 MONTHS</div>
+            <div class="pricing-card__price">₹7,500</div>
+            <div class="pricing-card__meta">180 days &nbsp;·&nbsp; ₹42/day</div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Men – 6 Months', '₹7,500')">Select Plan</button>
+          </div>
+          <div class="pricing-card pricing-card--best reveal" data-plan="Men – 12 Months" data-price="₹10,999">
+            <span class="pricing-card__badge">⭐ BEST VALUE</span>
+            <div class="pricing-card__duration">12 MONTHS</div>
+            <div class="pricing-card__price">₹10,999</div>
+            <div class="pricing-card__meta">365 days &nbsp;·&nbsp; <strong class="accent">🔥 ₹30/day</strong></div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Men – 12 Months', '₹10,999')">Select Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- COUPLE -->
+      <div class="pricing-panel pricing-panel--hidden" id="tab-couple">
+        <div class="pricing-grid">
+          <div class="pricing-card reveal" data-plan="Couple – 1 Month" data-price="₹3,200">
+            <div class="pricing-card__duration">1 MONTH</div>
+            <div class="pricing-card__price">₹3,200</div>
+            <div class="pricing-card__meta">30 days &nbsp;·&nbsp; ₹53/day per person</div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Couple – 1 Month', '₹3,200')">Select Plan</button>
+          </div>
+          <div class="pricing-card reveal" data-plan="Couple – 3 Months" data-price="₹9,000">
+            <div class="pricing-card__duration">3 MONTHS</div>
+            <div class="pricing-card__price">₹9,000</div>
+            <div class="pricing-card__meta">90 days &nbsp;·&nbsp; ₹50/day per person</div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Couple – 3 Months', '₹9,000')">Select Plan</button>
+          </div>
+          <div class="pricing-card reveal" data-plan="Couple – 6 Months" data-price="₹14,000">
+            <div class="pricing-card__duration">6 MONTHS</div>
+            <div class="pricing-card__price">₹14,000</div>
+            <div class="pricing-card__meta">180 days &nbsp;·&nbsp; ₹38/day per person</div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Couple – 6 Months', '₹14,000')">Select Plan</button>
+          </div>
+          <div class="pricing-card pricing-card--best reveal" data-plan="Couple – 12 Months" data-price="₹17,999">
+            <span class="pricing-card__badge">⭐ MOST POPULAR</span>
+            <div class="pricing-card__duration">12 MONTHS</div>
+            <div class="pricing-card__price">₹17,999</div>
+            <div class="pricing-card__meta">365 days &nbsp;·&nbsp; <strong class="accent">🔥 ₹25/day per person</strong></div>
+            <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Couple – 12 Months', '₹17,999')">Select Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Big highlight -->
+      <div class="pricing__highlight reveal">
+        <span>🔥 START AT JUST <strong>₹25/DAY*</strong></span>
+        <span class="pricing__highlight-sep">·</span>
+        <span>❤️ COUPLES JUST <strong>₹25/DAY</strong> PER PERSON*</span>
+      </div>
+      <p class="pricing__footnote">*Per day price is for calculation purpose only. Memberships are available on monthly &amp; long-term plans only.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / ENQUIRY ===== -->
+  <section class="contact section" id="contact" aria-label="Contact and enquiry">
+    <div class="container contact__grid">
+      <div class="contact__copy">
+        <p class="section-eyebrow">GET STARTED</p>
+        <h2 class="section-headline">START YOUR <span class="accent">FITNESS JOURNEY</span> TODAY</h2>
+        <p class="contact__text">
+          Fill out the form and one of our team members will contact you within 24 hours.
+          Or if you prefer, just message us on WhatsApp — we respond fast.
+        </p>
+        <a href="https://wa.me/918639062100?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Message Us on WhatsApp
+        </a>
+        <ul class="contact__details">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.4 11.6a19.79 19.79 0 01-3.07-8.67A2 2 0 013.11 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.4A16 16 0 0015.6 16.1l.86-.86a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+918639062100">+91 86390 62100</a>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.4 11.6a19.79 19.79 0 01-3.07-8.67A2 2 0 013.11 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.4A16 16 0 0015.6 16.1l.86-.86a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+917780464533">+91 77804 64533</a>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.4 11.6a19.79 19.79 0 01-3.07-8.67A2 2 0 013.11 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.4A16 16 0 0015.6 16.1l.86-.86a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+919666555990">+91 96665 55990</a>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Opp. Collectorate Walking Park, VidyaNagar Colony, Sangareddy
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Mon–Sun: 5:30 AM – 10:00 PM
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact__form-wrap">
+        <form class="enquiry-form" id="enquiryForm" novalidate>
+          <h3 class="enquiry-form__title">ENQUIRY FORM</h3>
+
+          <!-- Selected plan pill (shown when a plan is selected from pricing) -->
+          <div class="selected-plan-pill" id="selectedPlanPill" hidden>
+            <span class="selected-plan-pill__label">Selected:</span>
+            <span class="selected-plan-pill__name" id="selectedPlanName"></span>
+            <button type="button" class="selected-plan-pill__clear" id="clearPlan" aria-label="Clear plan selection">&times;</button>
+          </div>
+
+          <div class="form-group">
+            <label for="name" class="form-label">YOUR NAME <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required autocomplete="name" />
+            <span class="form-error" id="nameError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">PHONE NUMBER <span aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX" required autocomplete="tel" pattern="[0-9+\s\-]{10,15}" />
+            <span class="form-error" id="phoneError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="plan" class="form-label">MEMBERSHIP PLAN</label>
+            <select id="plan" name="plan" class="form-input form-select">
+              <option value="">Select a plan</option>
+              <optgroup label="Women">
+                <option value="Women – 1 Month (₹1,800)">1 Month – ₹1,800</option>
+                <option value="Women – 3 Months (₹4,500)">3 Months – ₹4,500</option>
+                <option value="Women – 6 Months (₹7,000)">6 Months – ₹7,000 💥 Hot Deal</option>
+                <option value="Women – 12 Months (₹9,000)">12 Months – ₹9,000 ⭐ Best Value</option>
+              </optgroup>
+              <optgroup label="Men">
+                <option value="Men – 1 Month (₹2,000)">1 Month – ₹2,000</option>
+                <option value="Men – 3 Months (₹5,000)">3 Months – ₹5,000</option>
+                <option value="Men – 6 Months (₹7,500)">6 Months – ₹7,500</option>
+                <option value="Men – 12 Months (₹10,999)">12 Months – ₹10,999 ⭐ Best Value</option>
+              </optgroup>
+              <optgroup label="Couple">
+                <option value="Couple – 1 Month (₹3,200)">1 Month – ₹3,200</option>
+                <option value="Couple – 3 Months (₹9,000)">3 Months – ₹9,000</option>
+                <option value="Couple – 6 Months (₹14,000)">6 Months – ₹14,000</option>
+                <option value="Couple – 12 Months (₹17,999)">12 Months – ₹17,999 ⭐ Most Popular</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">MESSAGE <span class="form-label--optional">(OPTIONAL)</span></label>
+            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Any questions or specific goals?" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full btn--lg form-submit">
+            ENQUIRE NOW &rarr;
+          </button>
+          <p class="form-note">We'll get back to you within 24 hours. No spam, ever.</p>
+
+          <div class="form-success" id="formSuccess" aria-live="polite" hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Thanks! We'll reach out to you within 24 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAP ===== -->
+  <section class="map-section" aria-label="Location map">
+    <iframe
+      title="Sri Hari Fitness Sangareddy location on Google Maps"
+      src="https://maps.google.com/maps?q=17.5931220,78.0812968&output=embed&z=17"
+      width="100%"
+      height="340"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Footer">
+    <div class="container footer__grid">
+      <!-- Brand -->
+      <div class="footer__brand">
+        <a href="#" class="logo">
+          <span class="logo__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="6" fill="#F5A623"/>
+              <text x="18" y="24" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="14" fill="#0D0D0D" text-anchor="middle" letter-spacing="0.5">SHF</text>
+            </svg>
+          </span>
+          <span class="logo__text logo__text--stack"><span class="logo__text-top">SRI HARI</span><span class="logo__text-bottom accent">FITNESS</span></span>
+        </a>
+        <p class="footer__tagline">Sangareddy's premier fitness destination.<br>Transform your body, transform your life.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <nav class="footer__links" aria-label="Footer navigation">
+        <h4 class="footer__heading">QUICK LINKS</h4>
+        <a href="#about" class="footer__link">About Us</a>
+        <a href="#programs" class="footer__link">Programs</a>
+        <a href="#contact" class="footer__link">Membership Plans</a>
+        <a href="#contact" class="footer__link">Contact Us</a>
+      </nav>
+
+      <!-- Social -->
+      <div class="footer__social">
+        <h4 class="footer__heading">CONNECT WITH US</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-icon" aria-label="Follow on Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/918639062100" target="_blank" rel="noopener" class="social-icon" aria-label="Chat on WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+        <p class="footer__social-note">Follow us on Instagram for daily workout videos and gym updates.</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; 2025 Sri Hari Fitness, Sangareddy. All rights reserved.</p>
+        <a href="https://maps.app.goo.gl/hx11xZDq3kRYAemGA?g_st=iw" target="_blank" rel="noopener" class="footer__map-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Opp. Collectorate Walking Park, VidyaNagar Colony, Sangareddy
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/918639062100?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
