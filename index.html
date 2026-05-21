@@ -43,6 +43,8 @@
     .loader__logo-text span { color: #F5A623; }
     .pricing-card__price del {
       text-decoration: line-through;
+      text-decoration-color: #ff4d4d;  /* 👈 this makes the cross red */
+      text-decoration-thickness: 2px;
       color: #999;
       font-size: 1rem;
       margin-left: 8px;
@@ -432,7 +434,10 @@
           <div class="pricing-card pricing-card--best reveal" data-plan="Men – 12 Months" data-price="₹10,999">
             <span class="pricing-card__badge">⭐ BEST VALUE</span>
             <div class="pricing-card__duration">12 MONTHS</div>
-            <div class="pricing-card__price">₹10,999</div>
+             <div class="pricing-card__price">
+              <span>₹12,000</span>
+              <del>₹15,000</del>
+            </div>
             <div class="pricing-card__meta">365 days &nbsp;·&nbsp; <strong class="accent">🔥 ₹30/day</strong></div>
             <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Men – 12 Months', '₹10,999')">Select Plan</button>
           </div>
@@ -463,7 +468,10 @@
           <div class="pricing-card pricing-card--best reveal" data-plan="Couple – 12 Months" data-price="₹17,999">
             <span class="pricing-card__badge">⭐ MOST POPULAR</span>
             <div class="pricing-card__duration">12 MONTHS</div>
-            <div class="pricing-card__price">₹17,999</div>
+            <div class="pricing-card__price">
+              <span>₹17,999</span>
+              <del>₹21,000</del>
+            </div>            
             <div class="pricing-card__meta">365 days &nbsp;·&nbsp; <strong class="accent">🔥 ₹25/day per person</strong></div>
             <button class="pricing-card__cta btn btn--primary btn--full" onclick="selectPlan('Couple – 12 Months', '₹17,999')">Select Plan</button>
           </div>
