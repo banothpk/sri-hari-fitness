@@ -109,7 +109,32 @@
       transform: translateY(-2px);
     }
 
-    @keyframes loaderPulse {
+    .instagram-float {
+    position: fixed;
+    right: 20px;
+    bottom: 100px; /* above WhatsApp */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(
+      45deg,
+      #405de6,
+      #5851db,
+      #833ab4,
+      #c13584,
+      #e1306c,
+      #fd1d1d,
+      #f56040
+    );
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    box-shadow: 0 6px 18px rgba(0,0,0,.3);
+    text-decoration: none;
+  }
+      @keyframes loaderPulse {
       0%, 100% { opacity: 1; }
       50%       { opacity: .6; }
     }
