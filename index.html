@@ -723,62 +723,32 @@
   </section>
 
 <!-- ===== MEET THE FAMILY ===== -->
+<!-- ===== GALLERY STRIP ===== -->
 <section class="gallery section--sm" aria-label="Meet the Family">
   <div class="container">
-
     <div class="section-header">
       <p class="section-eyebrow">SriHariFitness</p>
       <h2 class="section-headline">Meet the <span class="accent">Family</span></h2>
       <p class="section-description">
         The family who have been with me every step of the way.
       </p>
+    </div>    
+
+    <div class="gallery__track" aria-hidden="true">
+
+      <img src="IMG_6900.png" alt="Family member" loading="lazy" />
+      <img src="IMG_6901.png" alt="Family member" loading="lazy" />
+      <img src="IMG_6902.png" alt="Family member" loading="lazy" />
+
+      <!-- duplicate for infinite scroll -->
+
+      <img src="IMG_6900.png" alt="Family member" loading="lazy" />
+      <img src="IMG_6901.png" alt="Family member" loading="lazy" />
+      <img src="IMG_6902.png" alt="Family member" loading="lazy" />
+
     </div>
-
-  <div class="family-track" aria-hidden="true">
-
-    <img src="IMG_6900.png" alt="Family member" loading="lazy" />
-    <img src="IMG_6901.png" alt="Family member" loading="lazy" />
-    <img src="IMG_6902.png" alt="Family member" loading="lazy" />
-
-    <!-- duplicate for infinite scroll -->
-    <img src="IMG_6900.png" alt="Family member" loading="lazy" />
-    <img src="IMG_6901.png" alt="Family member" loading="lazy" />
-    <img src="IMG_6902.png" alt="Family member" loading="lazy" />
-
   </div>
-</section>
-
-<style>
-.family-gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-top: 32px;
-}
-
-.family-gallery img {
-  width: 320px;
-  height: 400px;
-  object-fit: cover;
-  object-position: 50% 40%;
-  border-radius: 16px;
-}
-
-.family-gallery img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 768px) {
-  .family-gallery img {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-  }
-}
-</style>     
+</section>    
   <!-- ===== FOOTER ===== -->
   <footer class="footer" aria-label="Footer">
     <div class="container footer__grid">
