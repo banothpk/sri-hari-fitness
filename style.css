@@ -802,20 +802,20 @@ button { cursor: pointer; font: inherit; border: none; background: none; }
   max-height: 700px;
   width: 100%;
 }
+
 .trainer-slide__photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: bottom center;
+  object-fit: contain; /* show entire image */
+  object-position: center center;
+  display: block;
 }
+
 @media (max-width: 860px) {
-  .trainer-slide__photo { aspect-ratio: 3/4; max-height: 500px; }
-}
-.trainer-slide__photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: bottom center;
+  .trainer-slide__photo {
+    aspect-ratio: 3/4;
+    max-height: 500px;
+  }
 }
 
 /* Carousel controls */
