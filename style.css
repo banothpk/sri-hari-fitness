@@ -680,7 +680,7 @@ button { cursor: pointer; font: inherit; border: none; background: none; }
 .gallery__track img {
   width: clamp(280px, 32vw, 420px);
   height: clamp(280px, 32vw, 420px);
-  object-fit: cover;
+  object-fit: contain;
   background: #111;
   border-radius: var(--radius-md);
   flex-shrink: 0;
