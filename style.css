@@ -1431,6 +1431,29 @@ button { cursor: pointer; font: inherit; border: none; background: none; }
   line-height: 1;
   padding: 0;
 }
+
+.instagram-icon {
+  color: #fff;
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.instagram-icon:hover {
+  transform: scale(1.1);
+}
 .selected-plan-pill__clear:hover { color: #fff; }
 
 /* ---- SCROLLBAR ---- */
