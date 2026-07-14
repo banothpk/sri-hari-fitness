@@ -182,101 +182,91 @@
       <div class="loader__plate loader__plate--right"></div>
     </div>
   </div>
-<!-- ===== HEADER ===== -->
-<header class="header" id="header">
-  <div class="container header__inner">
 
-    <!-- Logo -->
-    <a href="#" class="logo">
-      <span class="logo__icon" aria-hidden="true">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="36" height="36" rx="6" fill="#F5A623"/>
-          <text x="18" y="24"
-                font-family="'Barlow Condensed', sans-serif"
-                font-weight="900"
-                font-size="14"
-                fill="#0D0D0D"
-                text-anchor="middle"
-                letter-spacing="0.5">
-            SHF
-          </text>
-        </svg>
-      </span>
-
-      <span class="logo__text logo__text--stack">
-        <span class="logo__text-top">SRI HARI</span>
-        <span class="logo__text-bottom accent">FITNESS</span>
-      </span>
-    </a>
-
-    <!-- Desktop Navigation -->
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#about" class="nav__link">About</a>
-      <a href="#programs" class="nav__link">Programs</a>
-      <a href="#pricing" class="nav__link">Pricing</a>
-      <a href="#contact" class="nav__link">Contact</a>
-    </nav>
-
-    <!-- Header Buttons -->
-    <div class="header__cta">
-
-      <a href="https://wa.me/919494906004?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy"
-         target="_blank"
-         rel="noopener"
-         class="btn btn--whatsapp">
-        WhatsApp
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="6" fill="#F5A623"/>
+            <text x="18" y="24" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="14" fill="#0D0D0D" text-anchor="middle" letter-spacing="0.5">SHF</text>
+          </svg>
+        </span>
+        <span class="logo__text logo__text--stack"><span class="logo__text-top">SRI HARI</span><span class="logo__text-bottom accent">FITNESS</span></span>
       </a>
 
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#programs" class="nav__link">Programs</a>
+        <a href="#pricing" class="nav__link">Pricing</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+
+<div class="header__cta">
+
+  <a href="https://wa.me/919494906004?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy" target="_blank" rel="noopener" class="btn btn--whatsapp">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5zM12 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 1.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5zm4.5-2a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"/>
+    </svg>
+    WhatsApp
+  </a>
+
+  <a href="https://www.instagram.com/sriharifitness?igsh=NDk1MmQwbTc5a3Rp&utm_source=qr"
+     target="_blank"
+     rel="noopener"
+     class="btn btn--instagram">
+
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5..." />
+    </svg>
+
+    Instagram
+  </a>
+</div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+</div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <a href="#about" class="mobile-nav__link">About</a>
+      <a href="#programs" class="mobile-nav__link">Programs</a>
+      <a href="#pricing" class="mobile-nav__link">Pricing</a>
+      <a href="#contact" class="mobile-nav__link">Contact</a>
       <a href="https://www.instagram.com/sriharifitness?igsh=NDk1MmQwbTc5a3Rp&utm_source=qr"
          target="_blank"
          rel="noopener"
-         class="btn btn--instagram">
+         class="btn btn--instagram btn--full">
         Instagram
       </a>
+      <a href="https://wa.me/919494906004?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy" target="_blank" rel="noopener" class="btn btn--whatsapp btn--full">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a href="#contact" class="btn btn--primary btn--full">Join Now</a>
+    </div>
+  </header>
 
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="hero__bg">
+      <img
+        src="new_bg_v2.png"
+        alt="Training floor at Sri Hari Fitness Sangareddy"
+        class="hero__img"
+        loading="eager"
+        fetchpriority="high"
+      />
     </div>
 
-    <!-- Hamburger -->
-    <button class="hamburger"
-            id="hamburger"
-            aria-label="Toggle menu"
-            aria-expanded="false">
+
+    <div class="hero__scroll-hint" aria-hidden="true">
       <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
-
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-
-    <a href="#about" class="mobile-nav__link">About</a>
-    <a href="#programs" class="mobile-nav__link">Programs</a>
-    <a href="#pricing" class="mobile-nav__link">Pricing</a>
-    <a href="#contact" class="mobile-nav__link">Contact</a>
-
-    <a href="https://www.instagram.com/sriharifitness?igsh=NDk1MmQwbTc5a3Rp&utm_source=qr"
-       target="_blank"
-       rel="noopener"
-       class="btn btn--instagram btn--full">
-      Instagram
-    </a>
-
-    <a href="https://wa.me/919494906004?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy"
-       target="_blank"
-       rel="noopener"
-       class="btn btn--whatsapp btn--full">
-      Chat on WhatsApp
-    </a>
-
-    <a href="#contact" class="btn btn--primary btn--full">
-      Join Now
-    </a>
-
-  </div>
-
-</header>
+    </div>
+  </section>
 
 
   <!-- ===== ABOUT ===== -->
@@ -327,54 +317,6 @@
     </div>
   </section>
 
-
-  <!-- ===== FOUNDER ===== -->
-  <section class="trainers section" id="founder" aria-label="Meet the founder">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">THE FOUNDER</p>
-        <h2 class="section-headline">MEET THE <span class="accent">FOUNDER</span></h2>
-      </div>
-
-      <div class="trainer-slide">
-        <div class="trainer-slide__copy">
-          <p class="trainer-slide__role">FOUNDER</p>
-          <h3 class="trainer-slide__name">Praveen</h3>
-<p class="trainer-slide__bio">
-  Praveen founded Sri Hari Fitness with one goal: to bring a world-class training experience to Sangareddy through premium, carefully selected fitness equipment.
-</p>
-
-<p class="trainer-slide__bio">
-  From the beginning, the focus was never on filling the gym with random machines. Every piece of equipment was chosen based on biomechanics, comfort, stability, range of motion, and real training effectiveness.
-</p>
-
-<p class="trainer-slide__bio">
-  At Sri Hari Fitness, quality is not an afterthought—it is the foundation of everything we do.
-</p>
-          <div class="trainer-slide__specs">
-            <div class="trainer-spec">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-              <div>
-                <span class="trainer-spec__label">Location</span>
-                <span class="trainer-spec__value">Sangareddy, Telangana</span>
-              </div>
-            </div>
-            <div class="trainer-spec">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <div>
-                <span class="trainer-spec__label">Focus</span>
-                <span class="trainer-spec__value">Premium Equipment &amp; Elite Coach</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="trainer-slide__photo">
-          <img src="owner-dp.jpeg" alt="Praveen – Founder of Sri Hari Fitness Sangareddy" loading="lazy" />
-        </div>
-      </div>
-
-    </div>
-  </section>
   <!-- ===== PROGRAMS ===== -->
   <section class="programs section" id="programs" aria-label="Programs">
     <div class="container">
@@ -478,7 +420,53 @@
     </div>
   </section>
 
-  
+  <!-- ===== FOUNDER ===== -->
+  <section class="trainers section" id="founder" aria-label="Meet the founder">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">THE FOUNDER</p>
+        <h2 class="section-headline">MEET THE <span class="accent">FOUNDER</span></h2>
+      </div>
+
+      <div class="trainer-slide">
+        <div class="trainer-slide__copy">
+          <p class="trainer-slide__role">FOUNDER</p>
+          <h3 class="trainer-slide__name">Praveen</h3>
+<p class="trainer-slide__bio">
+  Praveen founded Sri Hari Fitness with one goal: to bring a world-class training experience to Sangareddy through premium, carefully selected fitness equipment.
+</p>
+
+<p class="trainer-slide__bio">
+  From the beginning, the focus was never on filling the gym with random machines. Every piece of equipment was chosen based on biomechanics, comfort, stability, range of motion, and real training effectiveness.
+</p>
+
+<p class="trainer-slide__bio">
+  At Sri Hari Fitness, quality is not an afterthought—it is the foundation of everything we do.
+</p>
+          <div class="trainer-slide__specs">
+            <div class="trainer-spec">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              <div>
+                <span class="trainer-spec__label">Location</span>
+                <span class="trainer-spec__value">Sangareddy, Telangana</span>
+              </div>
+            </div>
+            <div class="trainer-spec">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <div>
+                <span class="trainer-spec__label">Focus</span>
+                <span class="trainer-spec__value">Premium Equipment &amp; Elite Coach</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trainer-slide__photo">
+          <img src="owner-dp.jpeg" alt="Praveen – Founder of Sri Hari Fitness Sangareddy" loading="lazy" />
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- ===== PRICING ===== -->
   <section class="pricing section" id="pricing" aria-label="Membership pricing">
