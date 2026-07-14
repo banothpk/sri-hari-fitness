@@ -1451,8 +1451,29 @@ button { cursor: pointer; font: inherit; border: none; background: none; }
   transition: transform 0.3s ease;
 }
 
-.instagram-icon:hover {
-  transform: scale(1.1);
+.btn--instagram {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #f56040,
+    #f77737
+  );
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  /* 👇 Add transition here so hover is smooth */
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+.btn--instagram:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 .selected-plan-pill__clear:hover { color: #fff; }
 
