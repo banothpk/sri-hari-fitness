@@ -165,97 +165,101 @@
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div id="loader" aria-hidden="true">
-    <div class="loader__logo">
-      <svg width="40" height="40" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="36" height="36" rx="6" fill="#F5A623"/>
-        <path d="M6 18H9M27 18H30M9 18V13H12V23H9V18ZM27 18V13H24V23H27V18ZM12 18H24M15 13V23M21 13V23" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="loader__logo-text">SRI HARI <span>FITNESS</span></span>
-    </div>
-    <div class="loader__barbell">
-      <div class="loader__plate loader__plate--left"></div>
-      <div class="loader__collar"></div>
-      <div class="loader__bar"></div>
-      <div class="loader__collar"></div>
-      <div class="loader__plate loader__plate--right"></div>
-    </div>
-  </div>
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="container header__inner">
 
-  <!-- ===== HEADER ===== -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="#" class="logo">
-        <span class="logo__icon" aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="36" height="36" rx="6" fill="#F5A623"/>
-            <text x="18" y="24" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="14" fill="#0D0D0D" text-anchor="middle" letter-spacing="0.5">SHF</text>
-          </svg>
-        </span>
-        <span class="logo__text logo__text--stack"><span class="logo__text-top">SRI HARI</span><span class="logo__text-bottom accent">FITNESS</span></span>
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <span class="logo__icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="6" fill="#F5A623"/>
+          <text x="18" y="24"
+                font-family="'Barlow Condensed', sans-serif"
+                font-weight="900"
+                font-size="14"
+                fill="#0D0D0D"
+                text-anchor="middle"
+                letter-spacing="0.5">
+            SHF
+          </text>
+        </svg>
+      </span>
+
+      <span class="logo__text logo__text--stack">
+        <span class="logo__text-top">SRI HARI</span>
+        <span class="logo__text-bottom accent">FITNESS</span>
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#about" class="nav__link">About</a>
+      <a href="#programs" class="nav__link">Programs</a>
+      <a href="#pricing" class="nav__link">Pricing</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </nav>
+
+    <!-- Header Buttons -->
+    <div class="header__cta">
+
+      <a href="https://wa.me/919494906004?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy"
+         target="_blank"
+         rel="noopener"
+         class="btn btn--whatsapp">
+        WhatsApp
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#about" class="nav__link">About</a>
-        <a href="#programs" class="nav__link">Programs</a>
-        <a href="#pricing" class="nav__link">Pricing</a>
-        <a href="#contact" class="nav__link">Contact</a>
-      </nav>
-
-<div class="header__cta">
-  <a href="https://wa.me/919494906004?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy" target="_blank" rel="noopener" class="btn btn--whatsapp">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-    WhatsApp
-  </a>
-
-  <a href="https://www.instagram.com/sriharifitness?igsh=NDk1MmQwbTc5a3Rp&utm_source=qr" target="_blank" rel="noopener" class="btn btn--instagram">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5a4.25 4.25 0 0 0-4.25 4.25v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.5-.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-    </svg>
-    Instagram
-  </a>
-</div>
-
-    <!-- Mobile nav -->
-    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-      <a href="#about" class="mobile-nav__link">About</a>
-      <a href="#programs" class="mobile-nav__link">Programs</a>
-      <a href="#pricing" class="mobile-nav__link">Pricing</a>
-      <a href="#contact" class="mobile-nav__link">Contact</a>
       <a href="https://www.instagram.com/sriharifitness?igsh=NDk1MmQwbTc5a3Rp&utm_source=qr"
          target="_blank"
          rel="noopener"
-         class="btn btn--instagram btn--full">
+         class="btn btn--instagram">
         Instagram
       </a>
-      <a href="https://wa.me/919494906004?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy" target="_blank" rel="noopener" class="btn btn--whatsapp btn--full">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Chat on WhatsApp
-      </a>
-      <a href="#contact" class="btn btn--primary btn--full">Join Now</a>
-    </div>
-  </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="home" aria-label="Hero">
-    <div class="hero__bg">
-      <img
-        src="new_bg_v2.png"
-        alt="Training floor at Sri Hari Fitness Sangareddy"
-        class="hero__img"
-        loading="eager"
-        fetchpriority="high"
-      />
     </div>
 
-
-    <div class="hero__scroll-hint" aria-hidden="true">
+    <!-- Hamburger -->
+    <button class="hamburger"
+            id="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false">
       <span></span>
-    </div>
-  </section>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+
+    <a href="#about" class="mobile-nav__link">About</a>
+    <a href="#programs" class="mobile-nav__link">Programs</a>
+    <a href="#pricing" class="mobile-nav__link">Pricing</a>
+    <a href="#contact" class="mobile-nav__link">Contact</a>
+
+    <a href="https://www.instagram.com/sriharifitness?igsh=NDk1MmQwbTc5a3Rp&utm_source=qr"
+       target="_blank"
+       rel="noopener"
+       class="btn btn--instagram btn--full">
+      Instagram
+    </a>
+
+    <a href="https://wa.me/919494906004?text=Hi%2C%20I%27m%20interested%20in%20joining%20Sri%20Hari%20Fitness%20Sangareddy"
+       target="_blank"
+       rel="noopener"
+       class="btn btn--whatsapp btn--full">
+      Chat on WhatsApp
+    </a>
+
+    <a href="#contact" class="btn btn--primary btn--full">
+      Join Now
+    </a>
+
+  </div>
+
+</header>
 
 
   <!-- ===== ABOUT ===== -->
