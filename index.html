@@ -134,21 +134,30 @@
       color: white;
     }
 
-  .header__instagram{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width:40px;
-      height:40px;
-      margin-left:12px;
-      color:#F5A623;
-      transition:.3s;
-  }
-  
-  .header__instagram:hover{
-      color:#fff;
-      transform:scale(1.1);
-  }
+.header__instagram{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    margin-left:12px;
+    border-radius:50%;
+    background:linear-gradient(
+        45deg,
+        #F58529,
+        #FEDA77,
+        #DD2A7B,
+        #8134AF,
+        #515BD4
+    );
+    color:#fff;
+    transition:.3s ease;
+}
+
+.header__instagram:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 15px rgba(221,42,123,.45);
+}
     
     .social-icon--instagram:hover {
       transform: translateY(-2px);
@@ -437,17 +446,25 @@
           <img src="IMG_7478.png" alt="Praveen – Founder of Sri Hari Fitness Sangareddy" loading="lazy" />
         </div>
       </div>
-<p class="trainer-slide__bio">
-  Praveen founded Sri Hari Fitness with one goal: to bring a world-class training experience to Sangareddy through premium, carefully selected fitness equipment.
-</p>
+<div class="founder-bio">
 
-<p class="trainer-slide__bio">
-  From the beginning, the focus was never on filling the gym with random machines. Every piece of equipment was chosen based on biomechanics, comfort, stability, range of motion, and real training effectiveness.
-</p>
+  <blockquote class="founder-quote">
+    "Quality is not an afterthought—it is the foundation of everything we do."
+  </blockquote>
 
-<p class="trainer-slide__bio">
-  At Sri Hari Fitness, quality is not an afterthought—it is the foundation of everything we do.
-</p>
+  <p class="trainer-slide__bio">
+    Praveen founded <strong>Sri Hari Fitness</strong> with one goal: to bring a world-class training experience to Sangareddy through premium, carefully selected fitness equipment.
+  </p>
+
+  <p class="trainer-slide__bio">
+    From the beginning, the focus was never on filling the gym with random machines. Every piece of equipment was chosen based on biomechanics, comfort, stability, range of motion, and real training effectiveness.
+  </p>
+
+  <p class="trainer-slide__bio">
+    Today, Sri Hari Fitness stands as a symbol of quality, performance, and excellence—where every detail is designed to help members train smarter, safer, and stronger.
+  </p>
+
+</div>
       
     </div>
   </section>
