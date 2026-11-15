@@ -1,0 +1,4 @@
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://sriharifitness.com/sitemap.xml
